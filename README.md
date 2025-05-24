@@ -149,6 +149,7 @@ def lambda_handler(event, context):
             Subject="Alerta Urgente - Fazenda FarmTech"
         )
     # ... (retorno) ...
+```
 Legenda: Código Python da função VerificaSensoresFarmTech no editor do console Lambda.
 
 Após inserir o código, ele é implantado (Deploy) para estar ativo.
