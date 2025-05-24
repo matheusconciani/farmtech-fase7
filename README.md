@@ -69,17 +69,17 @@ Uma assinatura do tipo e-mail foi criada para o tópico `AlertasFarmTech`, direc
 * **Protocolo:** E-mail
 * **Endpoint:** `seu-email@exemplo.com`
 
-![Criação da Assinatura de E-mail no SNS](img/aws_alerts/sns_subscription_creation.png)
+![Criação da Assinatura de E-mail no SNS](img/aws_alerts/1.jpeg)
 *Legenda: Formulário de criação da assinatura de e-mail para o tópico SNS.*
 
 Após a solicitação, um e-mail de confirmação é enviado para o endereço fornecido.
 
-![E-mail de Confirmação da Assinatura SNS](img/aws_alerts/sns_subscription_confirmation_email.png)
+![E-mail de Confirmação da Assinatura SNS](img/aws_alerts/2.jpeg)
 *Legenda: E-mail recebido para confirmação da assinatura no tópico SNS.*
 
 Com a confirmação, a assinatura fica ativa e pronta para receber notificações.
 
-![Status da Assinatura Confirmada no SNS](img/aws_alerts/sns_subscription_confirmed_status.png)
+![Status da Assinatura Confirmada no SNS](img/aws_alerts/3.jpeg)
 *Legenda: Assinatura de e-mail confirmada e ativa no console do SNS.*
 
 ---
@@ -96,10 +96,10 @@ Foi criada uma IAM Role para conceder à função Lambda as permissões necessá
     * `AWSLambdaBasicExecutionRole` (para logs no CloudWatch)
     * `AmazonSNSFullAccess` (para publicar no SNS - em produção, idealmente seria mais restrita)
 
-![Seleção de Entidade Confiável para IAM Role (Lambda)](img/aws_alerts/iam_role_trusted_entity_lambda.png)
+![Seleção de Entidade Confiável para IAM Role (Lambda)](img/aws_alerts/4.jpeg)
 *Legenda: Seleção do serviço Lambda como entidade confiável durante a criação da IAM Role.*
 
-![Adição de Políticas de Permissão à IAM Role](img/aws_alerts/iam_role_permissions_policies.png)
+![Adição de Políticas de Permissão à IAM Role](img/aws_alerts/5.jpeg)
 *Legenda: Anexando as políticas `AWSLambdaBasicExecutionRole` e `AmazonSNSFullAccess` à IAM Role.*
 
 ![Revisão e Nomeação da IAM Role](img/aws_alerts/iam_role_naming_review.png)
@@ -121,7 +121,7 @@ A função Lambda `VerificaSensoresFarmTech` contém a lógica principal do serv
 * **Arquitetura:** x86_64 (ou a utilizada)
 * **Função de Execução (Role):** Utilizada a IAM Role `LambdaExecutaAlertasFarmTechRole` criada anteriormente.
 
-![Configurações Iniciais para Criação da Função Lambda](img/aws_alerts/lambda_creation_initial_settings.png)
+![Configurações Iniciais para Criação da Função Lambda](img/aws_alerts/6.jpeg)
 *Legenda: Tela de configuração para criar uma nova função Lambda "do zero".*
 
 ![Seleção da IAM Role Existente para a Função Lambda](img/aws_alerts/lambda_execution_role_selection.png)
