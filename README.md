@@ -54,13 +54,8 @@ Um tópico SNS chamado `AlertasFarmTech` foi criado para centralizar as mensagen
 * **Tipo:** Standard
 * **Nome:** `AlertasFarmTech`
 
-![Criação do Tópico SNS - Configurações Iniciais](img/aws_alerts/sns_topic_creation_settings.png)
-*Legenda: Tela de configuração inicial para a criação do tópico SNS.*
-
 Após a criação, o ARN (Amazon Resource Name) do tópico é gerado e será utilizado pela função Lambda para publicar mensagens.
 
-![ARN do Tópico SNS Criado](img/aws_alerts/sns_topic_arn_detail.png)
-*Legenda: Detalhes do tópico SNS `AlertasFarmTech` exibindo seu ARN.*
 
 ### Criação da Assinatura (E-mail)
 
@@ -102,12 +97,6 @@ Foi criada uma IAM Role para conceder à função Lambda as permissões necessá
 ![Adição de Políticas de Permissão à IAM Role](img/aws_alerts/5.jpeg)
 *Legenda: Anexando as políticas `AWSLambdaBasicExecutionRole` e `AmazonSNSFullAccess` à IAM Role.*
 
-![Revisão e Nomeação da IAM Role](img/aws_alerts/iam_role_naming_review.png)
-*Legenda: Tela de revisão final e nomeação da IAM Role antes da criação.*
-
-![IAM Role Criada com Sucesso](img/aws_alerts/iam_role_creation_success.png)
-*Legenda: Confirmação da criação bem-sucedida da IAM Role `LambdaExecutaAlertasFarmTechRole`.*
-
 ---
 
 ## 4. Desenvolvimento da Função AWS Lambda
@@ -124,8 +113,6 @@ A função Lambda `VerificaSensoresFarmTech` contém a lógica principal do serv
 ![Configurações Iniciais para Criação da Função Lambda](img/aws_alerts/6.jpeg)
 *Legenda: Tela de configuração para criar uma nova função Lambda "do zero".*
 
-![Seleção da IAM Role Existente para a Função Lambda](img/aws_alerts/lambda_execution_role_selection.png)
-*Legenda: Selecionando a IAM Role `LambdaExecutaAlertasFarmTechRole` para a função.*
 
 ### Código da Função Lambda
 
@@ -154,7 +141,7 @@ Legenda: Código Python da função VerificaSensoresFarmTech no editor do consol
 
 Após inserir o código, ele é implantado (Deploy) para estar ativo.
 
-![deploy das alterações no código](img/aws_alerts/9.jpeg)
+![deploy das alterações no código](img/aws_alerts/8.jpeg)
 Legenda: Realizando o deploy das alterações no código da função Lambda.
 
 ### Teste da Função Lambda
@@ -189,7 +176,7 @@ Legenda: Definindo o nome e selecionando o tipo "Regra de agendamento" no EventB
 ![Configurando regra para cada 5 minutos](img/aws_alerts/13.jpeg)
 Legenda: Configurando a regra para executar a uma taxa fixa (ex: a cada 5 minutos).
 
-![Regra AgendaVerificaSensoresFarmTech criada com sucesso](img/aws_alerts/13.jpeg)
+![Regra AgendaVerificaSensoresFarmTech criada com sucesso](img/aws_alerts/14.jpeg)
 Legenda: Regra AgendaVerificaSensoresFarmTech criada com sucesso e ativa.
 
 ## 6. Fluxo do Serviço de Alerta
