@@ -156,7 +156,7 @@ Após inserir o código, ele é implantado (Deploy) para estar ativo.
 
 Legenda: Realizando o deploy das alterações no código da função Lambda.
 
-Teste da Função Lambda
+### Teste da Função Lambda
 Um evento de teste foi configurado para simular a execução da função Lambda e validar seu comportamento, incluindo o envio do e-mail de alerta.
 
 Legenda: Configurando um novo evento de teste no console Lambda.
@@ -173,10 +173,10 @@ Os logs detalhados da execução podem ser visualizados no Amazon CloudWatch.
 
 Legenda: Visualização dos logs de execução da função Lambda no CloudWatch.
 
-5. Agendamento da Função Lambda com Amazon EventBridge
+## 5. Agendamento da Função Lambda com Amazon EventBridge
 Para automatizar a verificação dos sensores, uma regra foi criada no Amazon EventBridge para acionar a função Lambda VerificaSensoresFarmTech em intervalos regulares.
 
-Criação da Regra no EventBridge
+### Criação da Regra no EventBridge
 Nome da Regra: AgendaVerificaSensoresFarmTech
 Tipo de Regra: Agendamento (Schedule)
 Padrão de Agendamento: Taxa fixa (ex: a cada 5 minutos para teste).
@@ -191,7 +191,7 @@ Legenda: Tela de revisão das configurações da regra antes de sua criação.
 
 Legenda: Regra AgendaVerificaSensoresFarmTech criada com sucesso e ativa.
 
-6. Fluxo do Serviço de Alerta
+## 6. Fluxo do Serviço de Alerta
 O fluxo de operação do sistema de alerta pode ser resumido da seguinte forma:
 
 Agendamento (EventBridge): A regra AgendaVerificaSensoresFarmTech é disparada no intervalo configurado.
@@ -201,7 +201,7 @@ Decisão de Alerta: Se uma condição de alerta é detectada (ex: pH &lt; 5.0 ou
 Publicação no Tópico (SNS): A função Lambda publica a mensagem de alerta no tópico SNS AlertasFarmTech.
 Notificação (SNS para E-mail): O SNS envia a mensagem do tópico para todos os endpoints inscritos e confirmados (o e-mail configurado).
 Ação Corretiva: O responsável recebe o e-mail e pode tomar as ações corretivas indicadas na mensagem.
-7. Considerações Finais
+## 7. Considerações Finais
 O serviço de alerta implementado representa um componente crucial para o sistema de gestão da FarmTech. Ele permite o monitoramento proativo e a notificação de eventos críticos, contribuindo para a eficiência e sustentabilidade da produção agrícola.
 
 Próximos Passos Sugeridos (para evolução do projeto):
