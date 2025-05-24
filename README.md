@@ -154,15 +154,18 @@ Legenda: Código Python da função VerificaSensoresFarmTech no editor do consol
 
 Após inserir o código, ele é implantado (Deploy) para estar ativo.
 
+![deploy das alterações no código](img/aws_alerts/9.jpeg)
 Legenda: Realizando o deploy das alterações no código da função Lambda.
 
 ### Teste da Função Lambda
 Um evento de teste foi configurado para simular a execução da função Lambda e validar seu comportamento, incluindo o envio do e-mail de alerta.
 
+![Log de execução indicando sucesso](img/aws_alerts/9.jpeg)
 Legenda: Configurando um novo evento de teste no console Lambda.
 
 O teste bem-sucedido confirma que a função executa corretamente e que a integração com o SNS está funcionando.
 
+![Log de execução indicando sucesso](img/aws_alerts/10.jpeg)
 Legenda: Log de execução indicando sucesso no teste da função Lambda.
 
 Como resultado do teste, um e-mail de alerta é recebido.
@@ -170,8 +173,6 @@ Como resultado do teste, um e-mail de alerta é recebido.
 Legenda: Exemplo do e-mail de alerta recebido, originado pelo teste da função Lambda.
 
 Os logs detalhados da execução podem ser visualizados no Amazon CloudWatch.
-
-Legenda: Visualização dos logs de execução da função Lambda no CloudWatch.
 
 ## 5. Agendamento da Função Lambda com Amazon EventBridge
 Para automatizar a verificação dos sensores, uma regra foi criada no Amazon EventBridge para acionar a função Lambda VerificaSensoresFarmTech em intervalos regulares.
@@ -181,14 +182,14 @@ Nome da Regra: AgendaVerificaSensoresFarmTech
 Tipo de Regra: Agendamento (Schedule)
 Padrão de Agendamento: Taxa fixa (ex: a cada 5 minutos para teste).
 Alvo (Target): A função Lambda VerificaSensoresFarmTech.
+
+![Definindo agendamento no EventBridge](img/aws_alerts/12.jpeg)
 Legenda: Definindo o nome e selecionando o tipo "Regra de agendamento" no EventBridge.
 
+![Configurando regra para cada 5 minutos](img/aws_alerts/13.jpeg)
 Legenda: Configurando a regra para executar a uma taxa fixa (ex: a cada 5 minutos).
 
-Legenda: Selecionando a função VerificaSensoresFarmTech como o alvo da regra agendada.
-
-Legenda: Tela de revisão das configurações da regra antes de sua criação.
-
+![Regra AgendaVerificaSensoresFarmTech criada com sucesso](img/aws_alerts/13.jpeg)
 Legenda: Regra AgendaVerificaSensoresFarmTech criada com sucesso e ativa.
 
 ## 6. Fluxo do Serviço de Alerta
